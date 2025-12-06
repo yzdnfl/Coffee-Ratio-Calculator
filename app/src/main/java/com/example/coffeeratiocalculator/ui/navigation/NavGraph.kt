@@ -5,15 +5,24 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.coffeeratiocalculator.ui.screens.HomeScreen
-import com.example.coffeeratiocalculator.ui.screens.SettingsScreen
+import com.example.coffeeratiocalculator.ui.screens.RecipeScreen
 
 @Composable
 fun AppNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Destination.home.route
+        startDestination = "home"
     ) {
-        composable(Destination.home.route) { HomeScreen() }
-        composable(Destination.settings.route) { SettingsScreen() }
+        // ke home
+        composable("home") {
+            HomeScreen(
+                {
+                }
+            )
+        }
+        // ke recipe
+        composable("recipe") {
+            RecipeScreen()
+        }
     }
 }
