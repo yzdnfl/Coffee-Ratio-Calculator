@@ -76,7 +76,7 @@ fun AddRecipeCard() {
                         .fillMaxSize()
                         .padding(16.dp),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,
+                    horizontalAlignment = Alignment.Start,
                 ) {
                     Text(
                         text = "Recipe Name",
