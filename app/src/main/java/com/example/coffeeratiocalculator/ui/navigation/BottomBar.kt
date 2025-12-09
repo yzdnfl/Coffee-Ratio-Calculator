@@ -1,4 +1,3 @@
-// Applying correct imports
 package com.example.coffeeratiocalculator.ui.navigation
 
 import androidx.compose.material.icons.Icons

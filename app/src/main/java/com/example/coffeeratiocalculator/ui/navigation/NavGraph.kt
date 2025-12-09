@@ -16,7 +16,6 @@ fun AppNavGraph(navController: NavHostController) {
         // ke home
         composable("home") {
             HomeScreen(
-                onAddClick = { navController.navigate("recipe") },
                 onRecipeClick = { recipeId -> navController.navigate("recipe/$recipeId") }
             )
         }

@@ -18,7 +18,6 @@ val OrangeBrand = Color(0xFFFFA500)
 
 @Composable
 fun HomeScreen(
-    onAddClick: () -> Unit,
     onRecipeClick: (String) -> Unit
 ) {
     Column(
@@ -35,7 +34,7 @@ fun HomeScreen(
                 .fillMaxSize()
         ) {
             item {
-                AddRecipeCard(onAddClick)
+                AddRecipeCard()
             }
 
             item {
