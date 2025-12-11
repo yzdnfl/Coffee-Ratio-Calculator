@@ -12,7 +12,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.coffeeratiocalculator.ui.components.AddRecipeCard
 import com.example.coffeeratiocalculator.ui.components.RecipeImageCard
+import com.example.coffeeratiocalculator.ui.components.tools
 import com.example.coffeeratiocalculator.ui.navigation.HeaderSection
+import com.example.coffeeratiocalculator.ui.theme.bgColor
 
 val OrangeBrand = Color(0xFFFFA500)
 
@@ -23,16 +25,18 @@ fun HomeScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.DarkGray)
+            .background(color = bgColor)
     ) {
         HeaderSection()
 
         LazyColumn(
-            contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
                 .fillMaxSize()
         ) {
+            item {
+                tools()
+            }
             item {
                 AddRecipeCard()
             }
