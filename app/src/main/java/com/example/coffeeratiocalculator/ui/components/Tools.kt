@@ -50,13 +50,6 @@ fun tools() {
                 fontWeight = FontWeight.SemiBold,
                 color = Color.Black
             )
-            Text(
-                text = "EDIT",
-                fontSize = 15.sp,
-                fontFamily = myFontFamily,
-                fontWeight = FontWeight.Medium,
-                color = mainColor
-            )
             // end row
         }
         toolsComponent()

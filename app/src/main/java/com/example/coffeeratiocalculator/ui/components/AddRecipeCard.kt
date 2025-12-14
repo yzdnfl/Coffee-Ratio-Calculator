@@ -25,8 +25,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.sp
+import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
+import com.example.coffeeratiocalculator.ui.theme.myFontFamily
 
 @Composable
 fun AddRecipeCard() {
@@ -35,12 +36,13 @@ fun AddRecipeCard() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(horizontal = 20.dp)
             .clickable(
                 onClick = {
                     expanded = !expanded
                 }
             ),
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
@@ -64,10 +66,9 @@ fun AddRecipeCard() {
                 ) {
                     Text(
                         text = "Add New Recipe",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Cursive,
-                        color = Color.Black
+                        fontWeight = FontWeight.Medium,
+                        fontFamily = myFontFamily,
+                        color = floatingNavigationColor
                     )
                 }
             } else {
@@ -80,17 +81,15 @@ fun AddRecipeCard() {
                 ) {
                     Text(
                         text = "Recipe Name",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Cursive,
-                        color = Color.Black
+                        fontWeight = FontWeight.Medium,
+                        fontFamily = myFontFamily,
+                        color = floatingNavigationColor
                     )
                     Text(
                         text = "Description",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Cursive,
-                        color = Color.Black
+                        fontWeight = FontWeight.Medium,
+                        fontFamily = myFontFamily,
+                        color = floatingNavigationColor
                     )
                 }
             }

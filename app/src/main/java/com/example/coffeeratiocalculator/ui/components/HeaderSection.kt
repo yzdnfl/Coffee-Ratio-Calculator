@@ -1,4 +1,4 @@
-package com.example.coffeeratiocalculator.ui.navigation
+package com.example.coffeeratiocalculator.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -17,12 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.coffeeratiocalculator.ui.screens.OrangeBrand
+import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
+import com.example.coffeeratiocalculator.ui.theme.mainColor
+import com.example.coffeeratiocalculator.ui.theme.myFontFamily
 
 @Composable
 fun HeaderSection() {
@@ -31,7 +31,7 @@ fun HeaderSection() {
             .fillMaxWidth()
             .height(100.dp)
             .clip(RoundedCornerShape(bottomEnd = 40.dp))
-            .background(OrangeBrand)
+            .background(mainColor)
             .padding(horizontal = 24.dp)
             .padding(top = 16.dp),
         contentAlignment = Alignment.CenterStart
@@ -44,15 +44,15 @@ fun HeaderSection() {
         ) {
             Text(
                 text = "Coffee Ratio Calculator",
-                color = Color.Black,
+                color = floatingNavigationColor,
                 fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily.Cursive,
+                fontFamily = myFontFamily,
                 fontSize = 20.sp
             )
             Icon(
                 imageVector = Icons.Default.LocalCafe,
                 contentDescription = "Coffee Icon",
-                tint = Color.White,
+                tint = floatingNavigationColor,
                 modifier = Modifier.size(32.dp)
             )
         }
