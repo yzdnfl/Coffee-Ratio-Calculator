@@ -25,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
 import com.example.coffeeratiocalculator.ui.theme.myFontFamily
 
@@ -36,12 +35,8 @@ fun AddRecipeCard() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp)
-            .clickable(
-                onClick = {
-                    expanded = !expanded
-                }
-            ),
+            .padding(horizontal = 20.dp),
+        onClick = { expanded = !expanded },
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)

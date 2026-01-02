@@ -1,5 +1,6 @@
 package com.example.coffeeratiocalculator.ui.navigation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -17,7 +18,6 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,7 +32,7 @@ import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
 import com.example.coffeeratiocalculator.ui.theme.mainColor
 
 @Composable
-fun dynamicIsland() {
+fun DynamicIsland() {
 
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf("Home", "Search", "Add Recipe", "Message", "Profile")
@@ -43,6 +43,7 @@ fun dynamicIsland() {
             .fillMaxWidth()
             .padding(horizontal = 24.dp, vertical = 24.dp)
             .height(64.dp)
+            .background(color = Color.Transparent)
     ){
         Surface(
             modifier = Modifier

@@ -71,14 +71,10 @@ fun toolsComponent() {
             modifier = Modifier
                 .fillMaxHeight()
                 .padding(10.dp)
-                .height(130.dp).weight(1f)
-                .clickable(
-                    interactionSource = null,
-                    indication = null,
-                    onClick = { /*TODO*/ }
-                ),
+                .height(130.dp).weight(1f),
+            onClick = { /*TODO*/ },
             elevation = CardDefaults.cardElevation(
-                defaultElevation = 2.dp,   // Posisi diam (rendah)
+                defaultElevation = 8.dp,   // Posisi diam (rendah)
                 pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
                 hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
             ),
@@ -117,14 +113,10 @@ fun toolsComponent() {
             modifier = Modifier
                 .fillMaxHeight()
                 .padding(10.dp)
-                .height(130.dp).weight(1f)
-                .clickable(
-                    interactionSource = null,
-                    indication = null,
-                    onClick = { /*TODO*/ }
-                ),
+                .height(130.dp).weight(1f),
+            onClick = { /*TODO*/ },
             elevation = CardDefaults.cardElevation(
-                defaultElevation = 2.dp,   // Posisi diam (rendah)
+                defaultElevation = 8.dp,   // Posisi diam (rendah)
                 pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
                 hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
             ),
@@ -163,14 +155,10 @@ fun toolsComponent() {
             modifier = Modifier
                 .fillMaxHeight()
                 .padding(10.dp)
-                .height(130.dp).weight(1f)
-                .clickable(
-                    interactionSource = null,
-                    indication = null,
-                    onClick = { /*TODO*/ }
-                ),
+                .height(130.dp).weight(1f),
+            onClick = { /*TODO*/ },
             elevation = CardDefaults.cardElevation(
-                defaultElevation = 2.dp,   // Posisi diam (rendah)
+                defaultElevation = 8.dp,   // Posisi diam (rendah)
                 pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
                 hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
             ),

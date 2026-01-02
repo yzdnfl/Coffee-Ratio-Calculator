@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.coffeeratiocalculator.ui.components.AddRecipeCard
+import com.example.coffeeratiocalculator.ui.components.LastBrew
 import com.example.coffeeratiocalculator.ui.components.tools
 import com.example.coffeeratiocalculator.ui.theme.bgColor
 
@@ -29,6 +30,9 @@ fun HomeScreen() {
         ) {
             item {
                 tools()
+            }
+            item{
+                LastBrew()
             }
             item {
                 AddRecipeCard()
