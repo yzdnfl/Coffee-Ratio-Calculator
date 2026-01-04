@@ -36,7 +36,6 @@ import java.time.LocalTime
 
 @Composable
 fun HeaderSection() {
-    val expanded by remember {mutableStateOf(false)}
     val greeting = remember { getGreetingMessage() }
 
     Box(
@@ -61,7 +60,7 @@ fun HeaderSection() {
                 Text(text = greeting)
                 Text(
                     // belom dynamic buat namanya
-                    text = "Username",
+                    text = "Barista",
                     fontFamily = myFontFamily,
                     fontWeight = FontWeight.SemiBold,
                 )
@@ -114,7 +113,7 @@ fun NotificationDropdown() {
     ) {
         DropdownMenu(
             expanded = expanded,
-            onDismissRequest = {expanded = false},
+            onDismissRequest = { expanded = !expanded },
             modifier = Modifier
                 .background(color = Color.White)
         ) {
@@ -122,7 +121,7 @@ fun NotificationDropdown() {
                 modifier = Modifier,
                 text = { Text("Notification on") },
                 onClick = {
-                    isNotificationSelected = true
+                    isNotificationSelected = true; expanded = false
                 },
                 trailingIcon = {
                     Image(
@@ -134,7 +133,8 @@ fun NotificationDropdown() {
             )
             DropdownMenuItem(
                 text = { Text("Notification off") },
-                onClick = { isNotificationSelected = false},
+                onClick = {
+                    isNotificationSelected = false; expanded = false},
                 trailingIcon = {
                     Image(
                         painterResource(R.drawable.notification_off),

@@ -41,7 +41,7 @@ fun DynamicIsland() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp, vertical = 24.dp)
+            .padding(horizontal = 32.dp, vertical = 24.dp)
             .height(64.dp)
             .background(color = Color.Transparent)
     ){

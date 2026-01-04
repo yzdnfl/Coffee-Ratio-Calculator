@@ -35,7 +35,7 @@ fun AddRecipeCard() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp),
+            .padding(horizontal = 32.dp),
         onClick = { expanded = !expanded },
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),

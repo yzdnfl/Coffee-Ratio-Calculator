@@ -21,11 +21,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.coffeeratiocalculator.R
+import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
 import com.example.coffeeratiocalculator.ui.theme.mainColor
 import com.example.coffeeratiocalculator.ui.theme.myFontFamily
 
@@ -38,7 +40,7 @@ fun tools() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp),
+                .padding(start = 8.dp, top = 16.dp, bottom = 8.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -48,7 +50,10 @@ fun tools() {
                 fontSize = 25.sp,
                 fontFamily = myFontFamily,
                 fontWeight = FontWeight.SemiBold,
-                color = Color.Black
+                color = Color.Black,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 24.dp)
             )
             // end row
         }
@@ -60,138 +65,172 @@ fun tools() {
 // BAGIAN BAWAH TOOLS
 @Composable
 fun toolsComponent() {
+
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
+            .fillMaxWidth()
+            .padding(horizontal = 24.dp),
+        horizontalArrangement = Arrangement.SpaceEvenly
     ) {
-        // start row
-        Card(
+
+        // box 1 Ratio
+        Box(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(10.dp)
-                .height(130.dp).weight(1f),
-            onClick = { /*TODO*/ },
-            elevation = CardDefaults.cardElevation(
-                defaultElevation = 8.dp,   // Posisi diam (rendah)
-                pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
-                hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
-            ),
-            shape = RoundedCornerShape(35),
-            colors = CardDefaults.cardColors(containerColor = Color.White),
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp)
+                .weight(1f),
+            contentAlignment = Alignment.Center
         ) {
-            Column(
+            Card(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(20.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .fillMaxWidth(),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(8.dp),
+                shape = RoundedCornerShape(35),
+                onClick = { /*TODO*/ }
             ) {
-                Box(
+                Column(
                     modifier = Modifier
-                        .padding(10.dp)
-                        .height(50.dp)
-                        .width(50.dp)
-                        .background(color = mainColor.copy(alpha = 0.3f), shape = RoundedCornerShape(100)),
-                    contentAlignment = Alignment.Center,
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.calculator),
-                        contentDescription = "Calculator",
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Card(
+                            modifier = Modifier
+                                .padding(vertical = 8.dp),
+                            shape = RoundedCornerShape(100),
+                            colors = CardDefaults.cardColors(containerColor = mainColor.copy(alpha = 0.3f))
+                        ) {
+                            Image(
+                                painterResource(R.drawable.calculator),
+                                contentDescription = "calculator",
+                                modifier = Modifier
+                                    .padding(8.dp),
+                                alignment = Alignment.Center,
+                            )
+                        }
+                    }
+                    Text(
+                        text = "Ratio",
+                        fontFamily = myFontFamily,
+                        fontWeight = FontWeight.SemiBold,
+                        color = floatingNavigationColor
                     )
                 }
-                Text(
-                    text = "Ratio",
-                    fontFamily = myFontFamily,
-                    fontWeight = FontWeight.SemiBold
-                )
             }
         }
 
-        Card(
+        // box 2 Timer
+        Box(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(10.dp)
-                .height(130.dp).weight(1f),
-            onClick = { /*TODO*/ },
-            elevation = CardDefaults.cardElevation(
-                defaultElevation = 8.dp,   // Posisi diam (rendah)
-                pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
-                hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
-            ),
-            shape = RoundedCornerShape(35),
-            colors = CardDefaults.cardColors(containerColor = Color.White),
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp)
+                .weight(1f),
+            contentAlignment = Alignment.Center
         ) {
-            Column(
+            Card(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(20.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(8.dp),
+                shape = RoundedCornerShape(35),
+                onClick = { /*TODO*/ }
             ) {
-                Box(
+                Column(
                     modifier = Modifier
-                        .padding(10.dp)
-                        .height(50.dp)
-                        .width(50.dp)
-                        .background(color = mainColor.copy(alpha = 0.3f), shape = RoundedCornerShape(100)),
-                    contentAlignment = Alignment.Center,
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.timer),
-                        contentDescription = "timer",
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Card(
+                            modifier = Modifier
+                                .padding(vertical = 8.dp),
+                            shape = RoundedCornerShape(100),
+                            colors = CardDefaults.cardColors(containerColor = mainColor.copy(alpha = 0.3f))
+                        ) {
+                            Image(
+                                painterResource(R.drawable.timer),
+                                contentDescription = "timer",
+                                modifier = Modifier
+                                    .padding(8.dp),
+                                alignment = Alignment.Center,
+                            )
+                        }
+                    }
+                    Text(
+                        text = "Timer",
+                        fontFamily = myFontFamily,
+                        fontWeight = FontWeight.SemiBold,
+                        color = floatingNavigationColor
                     )
                 }
-                Text(
-                    text = "Timer",
-                    fontFamily = myFontFamily,
-                    fontWeight = FontWeight.SemiBold
-                )
             }
         }
 
-        Card(
+        // box 3 Log
+        Box(
             modifier = Modifier
-                .fillMaxHeight()
-                .padding(10.dp)
-                .height(130.dp).weight(1f),
-            onClick = { /*TODO*/ },
-            elevation = CardDefaults.cardElevation(
-                defaultElevation = 8.dp,   // Posisi diam (rendah)
-                pressedElevation = 12.dp,  // Posisi ditekan (naik tinggi/terangkat)
-                hoveredElevation = 6.dp    // (Opsional) Saat mouse lewat
-            ),
-            shape = RoundedCornerShape(35),
-            colors = CardDefaults.cardColors(containerColor = Color.White),
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp)
+                .weight(1f),
+            contentAlignment = Alignment.Center
         ) {
-            Column(
+            Card(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(20.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                    .fillMaxSize(),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(8.dp),
+                shape = RoundedCornerShape(35),
+                onClick = { /*TODO*/ }
             ) {
-                Box(
+                Column(
                     modifier = Modifier
-                        .padding(10.dp)
-                        .height(50.dp)
-                        .width(50.dp)
-                        .background(color = mainColor.copy(alpha = 0.3f), shape = RoundedCornerShape(100)),
-                    contentAlignment = Alignment.Center,
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.log),
-                        contentDescription = "log",
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Card(
+                            modifier = Modifier
+                                .padding(vertical = 8.dp),
+                            shape = RoundedCornerShape(100),
+                            colors = CardDefaults.cardColors(containerColor = mainColor.copy(alpha = 0.3f))
+                        ) {
+                            Image(
+                                painterResource(R.drawable.log),
+                                contentDescription = "log",
+                                modifier = Modifier
+                                    .padding(8.dp),
+                                alignment = Alignment.Center,
+                            )
+                        }
+                    }
+                    Text(
+                        text = "Log",
+                        fontFamily = myFontFamily,
+                        fontWeight = FontWeight.SemiBold,
+                        color = floatingNavigationColor
                     )
                 }
-                Text(
-                    text = "Log",
-                    fontFamily = myFontFamily,
-                    fontWeight = FontWeight.SemiBold
-                )
             }
         }
-        // end row
     }
+    // end row
 }

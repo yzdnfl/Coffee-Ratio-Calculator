@@ -27,6 +27,7 @@ fun HomeScreen() {
             verticalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
                 .fillMaxSize()
+                .background(color = Color.White)
         ) {
             item {
                 tools()
