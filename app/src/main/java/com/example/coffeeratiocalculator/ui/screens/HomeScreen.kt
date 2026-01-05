@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.coffeeratiocalculator.ui.components.AddRecipeCard
+import com.example.coffeeratiocalculator.ui.components.BottomEnd
+import com.example.coffeeratiocalculator.ui.components.History
 import com.example.coffeeratiocalculator.ui.components.LastBrew
 import com.example.coffeeratiocalculator.ui.components.tools
 import com.example.coffeeratiocalculator.ui.theme.bgColor
@@ -36,7 +38,10 @@ fun HomeScreen() {
                 LastBrew()
             }
             item {
-                AddRecipeCard()
+                History()
+            }
+            item {
+                BottomEnd()
             }
         }
     }

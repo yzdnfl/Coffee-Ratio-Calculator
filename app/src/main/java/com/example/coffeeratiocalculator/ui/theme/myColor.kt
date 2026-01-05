@@ -5,5 +5,6 @@ import com.example.coffeeratiocalculator.R
 
 val mainColor = Color(0xFFFAC638)
 val bgColor = Color(0xFFF8F8F5)
+val mainGray = Color(0xFFF3F4F6)
 
 val floatingNavigationColor = Color(0xFF3B2F2F)

@@ -26,6 +26,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.coffeeratiocalculator.ui.theme.floatingNavigationColor
@@ -33,7 +34,9 @@ import com.example.coffeeratiocalculator.ui.theme.mainColor
 
 @Composable
 fun DynamicIsland() {
-
+    val gradientColors = listOf(
+        Color.White.copy(alpha = 0f),
+        Color.White.copy(alpha = 1f))
     var selectedItem by remember { mutableIntStateOf(0) }
     val items = listOf("Home", "Search", "Add Recipe", "Message", "Profile")
     val icons = listOf(Icons.Default.Home, Icons.Default.Search, Icons.Default.Add, Icons.AutoMirrored.Filled.Message, Icons.Default.Person)
@@ -41,37 +44,45 @@ fun DynamicIsland() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 32.dp, vertical = 24.dp)
-            .height(64.dp)
-            .background(color = Color.Transparent)
-    ){
-        Surface(
+            .background(
+                brush = Brush.verticalGradient(colors = gradientColors),
+            )
+    ) {
+        Box(
             modifier = Modifier
-                .fillMaxSize(),
-            color = floatingNavigationColor,
-            shape = RoundedCornerShape(50),
-            shadowElevation = 8.dp
-        ) {
-            Row(
+                .fillMaxWidth()
+                .padding(horizontal = 32.dp, vertical = 24.dp)
+                .height(64.dp)
+
+        ){
+            Surface(
                 modifier = Modifier
                     .fillMaxSize(),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically
+                color = floatingNavigationColor,
+                shape = RoundedCornerShape(50),
+                shadowElevation = 8.dp
             ) {
-                items.forEachIndexed { index, item ->
-                    val isSelected = selectedItem == index
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize(),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    items.forEachIndexed { index, item ->
+                        val isSelected = selectedItem == index
 
-                    IconButton(
-                        onClick = {selectedItem = index},
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .weight(1f)
-                    ) {
-                        Icon(
-                            imageVector = icons[index],
-                            contentDescription = item,
-                            tint = if (isSelected) mainColor else Color.Gray
-                        )
+                        IconButton(
+                            onClick = {selectedItem = index},
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .weight(1f)
+                        ) {
+                            Icon(
+                                imageVector = icons[index],
+                                contentDescription = item,
+                                tint = if (isSelected) mainColor else Color.Gray
+                            )
+                        }
                     }
                 }
             }

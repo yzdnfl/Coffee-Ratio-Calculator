@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                     Box(
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
-                            .padding(bottom = 24.dp)
                     ) {
                         DynamicIsland()
                     }
