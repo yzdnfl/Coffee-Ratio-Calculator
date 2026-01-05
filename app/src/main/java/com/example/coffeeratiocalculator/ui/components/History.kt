@@ -31,6 +31,7 @@ import com.example.coffeeratiocalculator.ui.theme.mainGray
 
 @Composable
 fun History() {
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -136,8 +137,10 @@ fun HistoryComponents() {
                     ) {
                         Text(text = "Ethiopia Yirgacheffe",
                             fontWeight = FontWeight.SemiBold,
-                            color = Color.Black)
-                        Text(text = "V60 Pour Over")
+                            color = Color.Black,
+                            fontSize = 14.sp)
+                        Text(text = "V60 Pour Over" + " \u2022 "  + "Yestrerday",
+                            fontSize = 11.sp)
                     }
                 }
 
@@ -158,7 +161,7 @@ fun HistoryComponents() {
                         horizontalArrangement = Arrangement.End
                     ) {
                         Text(
-                            text = "4.5",
+                            text = "4.0",
                             fontWeight = FontWeight.SemiBold,
                             color = Color.Black,
                             modifier = Modifier
